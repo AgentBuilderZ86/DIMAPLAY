@@ -419,3 +419,10 @@ enabled = true
 
 [functions.delete-account]
 verify_jwt = true
+
+[functions.create-upload]
+verify_jwt = true
+
+# Called by the video provider with its own signature, not a user JWT.
+[functions.video-webhook]
+verify_jwt = false

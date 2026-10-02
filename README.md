@@ -38,5 +38,6 @@ Supabase/EAS secrets.
 - `src/app/` Expo Router routes (`(tabs)/` = Accueil, Jouer, Filmer, Classement, Profil)
 - `src/theme/` design tokens (light/dark), fonts · `src/i18n/` FR (default), AR (RTL), EN
 - `src/components/` shared UI · `__tests__/` Jest tests
+- `worker/` clip worker (ffmpeg, Node) · `docs/VIDEO.md` video architecture
 - `supabase/` config, migrations, functions, SQL tests (from M1)
 - `design/dima-play-mvp.html` visual reference (demo, fictional data)

@@ -4,3 +4,4 @@ dist
 design
 package-lock.json
 assets
+worker/dist

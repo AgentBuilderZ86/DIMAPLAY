@@ -37,4 +37,4 @@ Install Expo packages with `npx expo install` (SDK-compatible versions). Expo SD
 
 ## Layout (target)
 
-`src/app/` routes · `src/{components,features,lib,i18n,theme}` · `__tests__/` · `supabase/{migrations,functions,tests}` · `worker/` (optional ffmpeg) · `e2e/` · `docs/`
+`src/app/` routes · `src/{components,features,lib,i18n,theme}` · `__tests__/` · `supabase/{migrations,functions,tests}` · `worker/` (ffmpeg clip worker) · `e2e/` · `docs/`

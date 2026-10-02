@@ -11,3 +11,4 @@ android/
 .DS_Store
 supabase/.branches/
 supabase/.temp/
+worker/dist/

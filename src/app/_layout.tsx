@@ -9,6 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { Body, Button, Screen } from '@/components/ui';
 import { useAuthBootstrap } from '@/features/auth/bootstrap';
+import { useUploadRunner } from '@/features/video/runner';
 import { useAuth } from '@/features/auth/store';
 import { initI18n } from '@/i18n';
 import { fontAssets } from '@/theme/fontAssets';
@@ -22,6 +23,7 @@ function RootNavigator({ fontsReady }: { fontsReady: boolean }) {
   const profileError = useAuth((s) => s.profileError);
   const refreshProfile = useAuth((s) => s.refreshProfile);
   useAuthBootstrap();
+  useUploadRunner(status === 'ready');
 
   const ready = fontsReady && (status !== 'loading' || profileError);
   useEffect(() => {
@@ -49,6 +51,8 @@ function RootNavigator({ fontsReady }: { fontsReady: boolean }) {
       <Stack.Protected guard={status === 'ready'}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="matches" />
+        <Stack.Screen name="film" />
+        <Stack.Screen name="clips" />
         <Stack.Screen name="settings" options={{ presentation: 'modal' }} />
       </Stack.Protected>
     </Stack>
