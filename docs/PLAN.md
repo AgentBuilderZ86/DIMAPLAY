@@ -1,6 +1,6 @@
 # PLAN — Dima Play v1
 
-Status: M0 done (CI green). M1 implemented, see `docs/SETUP_M1.md` for what needs your accounts. Reference design: `design/dima-play-mvp.html`.
+Status: M0 done (CI green). M1 done (CI green, see `docs/SETUP_M1.md`). M2 implemented: see `docs/RATING.md` (Elo parameters to validate). Reference design: `design/dima-play-mvp.html`.
 Demo items out of v1 scope (kept as extension points): court booking, club space, sponsor circuit. Demo's "AI detects players" is replaced by self-tagging (no biometrics).
 
 ## Milestones (each: branch `m<N>-<name>`, tests green, report)

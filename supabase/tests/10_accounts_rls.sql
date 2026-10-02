@@ -1,17 +1,3 @@
--- RLS and behaviour tests for M1 accounts. Each assertion raises on failure.
-create schema t;
-grant usage on schema t to public;
-create function t.ok(cond boolean, msg text) returns void language plpgsql as $$
-begin
-  if cond is not true then raise exception 'ASSERT FAILED: %', msg; end if;
-end $$;
-grant execute on function t.ok(boolean, text) to public;
-create function t.act_as(uid uuid) returns void language plpgsql as $$
-begin
-  perform set_config('request.jwt.claim.sub', coalesce(uid::text, ''), false);
-end $$;
-grant execute on function t.act_as(uuid) to public;
-
 insert into auth.users (id, phone) values
   ('aaaaaaaa-0000-0000-0000-000000000001', '+212600000001'),
   ('bbbbbbbb-0000-0000-0000-000000000002', '+212600000002'),
