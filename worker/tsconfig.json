@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "rootDir": "..",
+    "outDir": "dist",
+    "allowImportingTsExtensions": false,
+    "rewriteRelativeImportExtensions": true,
+    "types": ["node"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "../supabase/functions/_shared/videoProvider.ts",
+    "../supabase/functions/_shared/cloudflareStream.ts"
+  ]
+}

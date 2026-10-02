@@ -1,0 +1,7 @@
+node_modules
+.expo
+dist
+design
+package-lock.json
+assets
+worker/dist

@@ -1,0 +1,79 @@
+# M1 acceptance: create account, sign out, sign back in, delete account.
+appId: ma.dimaplay.app
+---
+- clearState
+- launchApp
+- assertVisible: 'Yallah, on joue !'
+- tapOn:
+    id: 'phone-input'
+- inputText: '0600000001'
+- tapOn:
+    id: 'send-code'
+- tapOn:
+    id: 'code-input'
+- inputText: '123456'
+- tapOn:
+    id: 'verify-code'
+
+# Onboarding (5 steps)
+- assertVisible: 'Étape 1 sur 5'
+- tapOn:
+    id: 'display-name'
+- inputText: 'Mehdi'
+- tapOn:
+    id: 'next'
+- tapOn:
+    id: 'sport-foot'
+- tapOn:
+    id: 'next'
+- tapOn:
+    id: 'city'
+- inputText: 'Casablanca'
+- tapOn:
+    id: 'neighborhood'
+- inputText: 'Maârif'
+- tapOn:
+    id: 'next'
+- tapOn:
+    id: 'birth-year'
+- inputText: '1990'
+- tapOn:
+    id: 'next'
+- tapOn:
+    id: 'consent-terms'
+- tapOn:
+    id: 'consent-privacy'
+- tapOn:
+    id: 'finish'
+
+# Main app, then sign out
+- assertVisible: 'Accueil'
+- tapOn: 'Profil'
+- assertVisible: 'Salam Mehdi'
+- tapOn:
+    id: 'open-settings'
+- tapOn:
+    id: 'sign-out'
+- assertVisible: 'Yallah, on joue !'
+
+# Sign back in: onboarding must be skipped
+- tapOn:
+    id: 'phone-input'
+- inputText: '0600000001'
+- tapOn:
+    id: 'send-code'
+- tapOn:
+    id: 'code-input'
+- inputText: '123456'
+- tapOn:
+    id: 'verify-code'
+- assertVisible: 'Accueil'
+
+# Delete the account
+- tapOn: 'Profil'
+- tapOn:
+    id: 'open-settings'
+- tapOn:
+    id: 'delete-account'
+- tapOn: 'Supprimer définitivement'
+- assertVisible: 'Yallah, on joue !'
