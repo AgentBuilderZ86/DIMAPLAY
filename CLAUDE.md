@@ -5,6 +5,7 @@ Players organise matches, film them, mark highlights live, get vertical clips, a
 neighbourhood / city / Morocco rankings. v1 = real data only (no mocks in production), shipped via TestFlight → App Store.
 
 ## Stack
+
 Expo (latest stable) + TypeScript strict + Expo Router · EAS Build/Submit (`development`, `preview`, `production`) ·
 Supabase (Auth, Postgres + RLS on every table, Storage, Realtime, Edge Functions; local via Supabase CLI) ·
 Sign in with Apple + phone OTP only · react-native-vision-camera · expo-image-picker · resumable upload (tus) ·
@@ -12,6 +13,7 @@ Sign in with Apple + phone OTP only · react-native-vision-camera · expo-image-
 TanStack Query + Zustand · Jest + RNTL, SQL RLS tests, Maestro e2e · ESLint, Prettier, GitHub Actions · Sentry (no PII).
 
 ## Conventions
+
 - Code, identifiers, commits in English. UI strings in French by default (darija touches), AR (RTL) and EN via i18n.
   No hard-coded user-facing text outside translation files. Currency MAD, displayed "DH".
 - No secrets in code: `.env` (gitignored) + `app.config.ts`; keep `.env.example` documented.
@@ -23,12 +25,16 @@ TanStack Query + Zustand · Jest + RNTL, SQL RLS tests, Maestro e2e · ESLint, P
 - Check current docs (Expo, Supabase, RevenueCat, video provider, Apple rules) before each integration.
 
 ## Workflow
+
 - One milestone = one branch, green tests, clean commit, short report (done / left / risks). Don't start Mx+1 until Mx acceptance passes.
 - Act freely on local reversible work. Ask once (with everything prepared) before: creating paid accounts/projects, adding keys,
   pushing to remotes, EAS builds, TestFlight, App Store submission. Always ask before irreversible actions (remote data deletion, destructive migrations).
 
 ## Commands (to be filled as M0 lands)
-`npm test` · `npm run typecheck` · `npm run lint` · `npx supabase start` · `npx supabase db reset` · `npx maestro test e2e/`
+
+`npm test` · `npm run typecheck` · `npm run lint` · `npm run format:check` · `npx supabase start` · `npx supabase db reset` · `npx maestro test e2e/` (M1+)
+Install Expo packages with `npx expo install` (SDK-compatible versions). Expo SDK 57; pin `react` to the exact SDK version (expo-doctor).
 
 ## Layout (target)
-`app/` routes · `src/{components,features,lib,i18n,theme}` · `supabase/{migrations,functions,tests}` · `worker/` (optional ffmpeg) · `e2e/` · `docs/`
+
+`src/app/` routes · `src/{components,features,lib,i18n,theme}` · `__tests__/` · `supabase/{migrations,functions,tests}` · `worker/` (optional ffmpeg) · `e2e/` · `docs/`
