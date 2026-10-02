@@ -25,6 +25,8 @@ export interface Palette {
   accent: string;
   onAccent: string;
   activeTab: string;
+  danger: string;
+  onDanger: string;
   sport: Record<Sport, string>;
 }
 
@@ -42,6 +44,8 @@ export const light: Palette = {
   accent: brand.flood,
   onAccent: brand.ink,
   activeTab: brand.turf2,
+  danger: '#B3261E',
+  onDanger: '#FFFFFF',
   sport: { foot: brand.turf2, padel: brand.court, tennis: brand.clay },
 };
 
@@ -54,6 +58,8 @@ export const dark: Palette = {
   line: '#23382B',
   soft: '#1B2D22',
   activeTab: brand.flood,
+  danger: '#FF8A80',
+  onDanger: brand.ink,
   sport: { foot: '#1F7A4A', padel: '#5B78E8', tennis: '#D0714E' },
 };
 

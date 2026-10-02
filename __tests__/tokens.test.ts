@@ -26,6 +26,8 @@ describe.each([
     ['onPrimary on primary', p.onPrimary, p.primary],
     ['onAccent on accent', p.onAccent, p.accent],
     ['activeTab on surface', p.activeTab, p.surface],
+    ['danger on bg', p.danger, p.bg],
+    ['onDanger on danger', p.onDanger, p.danger],
   ])('%s', (_label, fg, bg) => {
     expect(contrast(fg, bg)).toBeGreaterThanOrEqual(4.5);
   });

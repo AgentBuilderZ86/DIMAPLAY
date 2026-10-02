@@ -18,13 +18,15 @@ npm start                # Expo dev server
 
 ## Commands
 
-| Command                                                  | Purpose                                       |
-| -------------------------------------------------------- | --------------------------------------------- |
-| `npm test`                                               | Jest + React Native Testing Library           |
-| `npm run typecheck`                                      | `tsc --noEmit` (strict)                       |
-| `npm run lint` / `npm run format:check`                  | ESLint / Prettier                             |
-| `npx supabase start` / `db reset`                        | Local Supabase (needs Docker)                 |
-| `eas build --profile <development\|preview\|production>` | EAS builds (requires approval, see CLAUDE.md) |
+| Command                                                           | Purpose                                                         |
+| ----------------------------------------------------------------- | --------------------------------------------------------------- |
+| `npm test`                                                        | Jest + React Native Testing Library                             |
+| `npm run typecheck`                                               | `tsc --noEmit` (strict)                                         |
+| `npm run lint` / `npm run format:check`                           | ESLint / Prettier                                               |
+| `PGURL=postgresql://user:pass@localhost:5432 scripts/test-sql.sh` | Migrations + SQL RLS tests on plain Postgres (no Docker needed) |
+| `maestro test e2e/auth_lifecycle.yaml`                            | End-to-end account lifecycle (macOS + simulator)                |
+| `npx supabase start` / `db reset`                                 | Local Supabase (needs Docker)                                   |
+| `eas build --profile <development\|preview\|production>`          | EAS builds (requires approval, see CLAUDE.md)                   |
 
 ## Environment variables
 
